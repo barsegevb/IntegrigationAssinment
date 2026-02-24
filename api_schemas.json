@@ -1,0 +1,69 @@
+{
+  "api_details": {
+    "base_url": "https://integrations-assignment-ticketforge.vercel.app/api/tforge",
+    "auth_method": "HTTP Basic Auth (Base64)",
+    "rate_limit_header": "X-Ratelimit-Limit"
+  },
+  "endpoints": {
+    "list_tickets": {
+      "method": "GET",
+      "path": "/workitems/mine",
+      "query_parameters": ["limit", "page"]
+    },
+    "create_ticket": {
+      "method": "POST",
+      "path": "/workitem/publish"
+    },
+    "update_ticket": {
+      "method": "PUT",
+      "path": "/workitem/{ref}"
+    },
+    "get_custom_fields": {
+      "method": "GET",
+      "path": "/custom-fields"
+    }
+  },
+  "schemas": {
+    "GET_Workitems_Response": {
+      "workitems": [
+        {
+          "ref": "<string, e.g., TF-205>",
+          "title": "<string>",
+          "description": "<string>",
+          "stage": "<string, e.g., open/closed>",
+          "created": "<ISO-8601 datetime>",
+          "updated": "<ISO-8601 datetime>"
+        }
+      ],
+      "pagination": {
+        "limit": "<integer>",
+        "hasMore": "<boolean>"
+      }
+    },
+    "GET_CustomFields_Response": {
+      "customFields": [
+        {
+          "id": "<string, generic ID>",
+          "name": "<string>",
+          "label": "<string>",
+          "type": "<string>",
+          "created": "<ISO-8601 datetime>",
+          "updated": "<ISO-8601 datetime>"
+        }
+      ]
+    },
+    "POST_CreateTicket_Payload": {
+      "title": "<string>",
+      "description": "<string>",
+      "dependsOn": null,
+      "customFields": {} 
+    },
+    "PUT_UpdateTicket_Payload": {
+      "title": "<string>",
+      "description": "<string>",
+      "stage": "<string>",
+      "dependsOn": null,
+      "customFields": {}
+    }
+  }
+}
