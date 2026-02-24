@@ -49,4 +49,4 @@ pytest -q
 - Listing expects a paginated API; parser supports common response shapes (`tickets`, `items`, `data`, `results`) as temporary compatibility logic.
 
 ## AI Disclosure
-This scaffold was generated with AI assistance (GitHub Copilot) and then tailored for the assignment constraints. All endpoint paths, auth headers, and business-specific payload fields must be validated and completed manually against observed TicketForge network traffic.
+This scaffold was generated with AI assistance (GitHub Copilot, Gemini) and then tailored for the assignment constraints. All endpoint paths, auth headers, and business-specific payload fields must be validated and completed manually against observed TicketForge network traffic.
